@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Portifolio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="início" class="cabecalho">
+
+        <img src="img/avatar.jpg" alt="foto kevin" class="foto-perfil">
+        <h1>Kevin Eduardo</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Atualmente, estou focado em aprimorar meus conhecimentos em desenvolvimento front-end, com planos de expandir futuramente para a área de back-end. Também venho me dedicando ao aprendizado de automação de tarefas com Python, buscando tornar processos mais eficientes.<br> <br>
+                Sou uma pessoa comunicativa, com facilidade para entender as necessidades dos usuários e comprometido em encontrar as melhores soluções, sempre visando a satisfação do cliente.
+            </p>
+        </div>
+    </section>
+
+    <section id="Projetos" class="projetos">
+        <h2 class="projetos-titulo">meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <div class="caixa-textos-projeto">
+                    <img src="img/imagem2.jpg" alt="projeto 1" class="projetos-imagem">
+                    <h3 class="info-projetos">Projeto 1</h3>
+                    <p class="paragrafo-projetos">Projeto em Criação</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <div class="caixa-textos-projeto">
+                    <img src="img/imagem2.jpg" alt="projeto 1" class="projetos-imagem">
+                    <h3 class="info-projetos">Projeto 2</h3>
+                    <p class="paragrafo-projetos">Projeto em Criação</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+
+                <div class="caixa-textos-projeto">
+                    <img src="img/imagem2.jpg" alt="projeto 1" class="projetos-imagem">
+                    <h3 class="info-projetos">Projeto 3</h3>
+                    <p class="paragrafo-projetos">Projeto em Criação</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="Nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+
+        </form>
+
+    </section>
+
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventdefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511966401785'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgformatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgformatada}`
+            
+            console.log (url)
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
